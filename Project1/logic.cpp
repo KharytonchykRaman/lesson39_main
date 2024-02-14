@@ -58,3 +58,32 @@ bool single_matrix(int matrix[N][M]) {
 	}
 	return true;
 }
+
+bool side_diagonal_matrix(int matrix[N][M]) {
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			if (matrix[i][j] != 0 && i + j != N - 1) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+bool side_single_matrix(int matrix[N][M]) {
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			if ((matrix[i][j] != 0 && i + j != N - 1) 
+				|| (matrix[i][j] != 1 && i + j == N - 1 )) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
